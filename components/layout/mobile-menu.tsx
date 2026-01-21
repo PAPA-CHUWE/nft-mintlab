@@ -14,7 +14,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 md:hidden w-screen",
+        "fixed inset-0 z-50 md:hidden w-screen h-screen",
         open ? "pointer-events-auto" : "pointer-events-none"
       )}
     >
@@ -22,15 +22,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
       <div
         onClick={onClose}
         className={cn(
-          "absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity",
+          "absolute inset-0 bg-white backdrop-blur-sm transition-opacity duration-300",
           open ? "opacity-100" : "opacity-0"
         )}
       />
 
-      {/* Panel */}
+      {/* Full-screen panel */}
       <div
         className={cn(
-          "absolute top-0 right-0 w-full rounded-b-3xl bg-background px-6 pt-6 pb-8 shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-transform",
+          "absolute inset-0 w-screen h-screen bg-background",
+          "px-6 pt-6 pb-8",
+          "flex flex-col",
+          "transition-transform duration-300 ease-out",
           open ? "translate-y-0" : "-translate-y-full"
         )}
       >
@@ -49,8 +52,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
           </button>
         </div>
 
-        {/* Links */}
-        <nav className="mt-8 flex flex-col gap-6 text-sm font-medium">
+        {/* Navigation */}
+        <nav className="mt-12 flex flex-col gap-8 text-base font-medium">
           <Link href="/recent" onClick={onClose} className="hover:opacity-70">
             Recent
           </Link>
@@ -65,11 +68,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
           </Link>
         </nav>
 
-        {/* Footer actions */}
-        <div className="mt-8 border-t pt-6">
-          <button
-            className="w-full rounded-full bg-black py-3 text-sm font-semibold text-white"
-          >
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Footer action */}
+        <div className="pt-6 border-t">
+          <button className="w-full rounded-full bg-black py-4 text-sm font-semibold text-white">
             Connect Wallet
           </button>
         </div>
