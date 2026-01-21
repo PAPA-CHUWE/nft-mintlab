@@ -14,7 +14,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 md:hidden",
+        "fixed inset-0 z-50 md:hidden w-screen",
         open ? "pointer-events-auto" : "pointer-events-none"
       )}
     >
