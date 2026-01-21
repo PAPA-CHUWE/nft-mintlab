@@ -18,7 +18,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
         open ? "pointer-events-auto" : "pointer-events-none"
       )}
     >
-      {/* Backdrop */}
       <div
         onClick={onClose}
         className={cn(
@@ -26,8 +25,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
           open ? "opacity-100" : "opacity-0"
         )}
       />
-
-      {/* Full-screen panel */}
       <div
         className={cn(
           "absolute inset-0 w-screen h-screen bg-background",

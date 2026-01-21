@@ -73,7 +73,7 @@ export default function NavBar() {
 
                 {/* Center notch/tab (always visible) */}
                 <div className="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2">
-                    <div className="rounded-b-[20px] bg-background px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:px-6 sm:pb-3 sm:pt-3">
+                    <div className="rounded-b-[20px] bg-white px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:px-6 sm:pb-3 sm:pt-3">
                         <div className="flex items-center gap-2 sm:gap-3">
                             <button
                                 type="button"
