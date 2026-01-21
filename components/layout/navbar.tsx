@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Menu, ShoppingBag, ShoppingCart } from "lucide-react";
+import MobileMenu from "./mobile-menu";
 
 type NavRole = "creator" | "collector";
 
 export default function NavBar() {
     const [role, setRole] = React.useState<NavRole>("creator");
     const [isScrolled, setIsScrolled] = React.useState(false);
+    const [menuOpen, setMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         const onScroll = () => setIsScrolled(window.scrollY > 8);
@@ -70,39 +72,39 @@ export default function NavBar() {
                 </div>
 
                 {/* Center notch/tab (always visible) */}
-<div className="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2">
-  <div className="rounded-b-[20px] bg-background px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:px-6 sm:pb-3 sm:pt-3">
-    <div className="flex items-center gap-2 sm:gap-3">
-      <button
-        type="button"
-        onClick={() => setRole("creator")}
-        className={cn(
-          "rounded-full font-semibold tracking-wide transition-colors",
-          "h-8 px-3 text-[12px] sm:h-9 sm:px-5 sm:text-[14px]",
-          role === "creator"
-            ? "bg-black text-white hover:bg-black/90"
-            : "bg-transparent text-foreground/70 hover:bg-muted"
-        )}
-      >
-        Creator
-      </button>
+                <div className="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2">
+                    <div className="rounded-b-[20px] bg-background px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:px-6 sm:pb-3 sm:pt-3">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                            <button
+                                type="button"
+                                onClick={() => setRole("creator")}
+                                className={cn(
+                                    "rounded-full font-semibold tracking-wide transition-colors",
+                                    "h-8 px-3 text-[12px] sm:h-9 sm:px-5 sm:text-[14px]",
+                                    role === "creator"
+                                        ? "bg-black text-white hover:bg-black/90"
+                                        : "bg-transparent text-foreground/70 hover:bg-muted"
+                                )}
+                            >
+                                Creator
+                            </button>
 
-      <button
-        type="button"
-        onClick={() => setRole("collector")}
-        className={cn(
-          "rounded-full font-semibold tracking-wide transition-colors",
-          "h-8 px-3 text-[12px] sm:h-9 sm:px-4 sm:text-[14px]",
-          role === "collector"
-            ? "bg-black text-white hover:bg-black/90"
-            : "bg-transparent text-foreground/70 hover:bg-muted"
-        )}
-      >
-        Collector
-      </button>
-    </div>
-  </div>
-</div>
+                            <button
+                                type="button"
+                                onClick={() => setRole("collector")}
+                                className={cn(
+                                    "rounded-full font-semibold tracking-wide transition-colors",
+                                    "h-8 px-3 text-[12px] sm:h-9 sm:px-4 sm:text-[14px]",
+                                    role === "collector"
+                                        ? "bg-black text-white hover:bg-black/90"
+                                        : "bg-transparent text-foreground/70 hover:bg-muted"
+                                )}
+                            >
+                                Collector
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
 
                 {/* Right: mobile menu icon (mobile), full right nav (desktop) */}
@@ -149,9 +151,15 @@ export default function NavBar() {
                         size="icon"
                         className="md:hidden h-10 w-10 rounded-full"
                         aria-label="Open menu"
+                        onClick={() => setMenuOpen(true)}
                     >
                         <Menu className="h-5 w-5" />
                     </Button>
+
+                    <MobileMenu
+  open={menuOpen}
+  onClose={() => setMenuOpen(false)}
+/>
                 </div>
             </div>
         </header>
