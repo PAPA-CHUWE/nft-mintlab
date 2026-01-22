@@ -35,18 +35,32 @@ export default function NavBar() {
             >
                 {/* Left: logo icon only on mobile */}
                 <div className="flex items-center gap-10">
-                <Link href="/" className="flex items-center">
-  <span className="relative block w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px]">
-    <Image
-      src="/logos/mintlab.svg"
-      alt="MintLab"
-      width={140}
-      height={40}
-      priority
-      className="h-auto w-full object-contain"
-    />
-  </span>
-</Link>
+                    <Link href="/" className="flex items-center gap-1">
+                        <div className="flex h-10 w-7  place-items-center">
+                            <svg
+                                role="img"
+                                aria-label="MintLab icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 256 256"
+                                width="34"
+                                height="34"
+                            >
+                                <title>MintLab icon</title>
+                                <g transform="translate(1.4066 1.4066) scale(2.81 2.81)" fill="currentColor" fill-rule="evenodd" stroke="none">
+                                    <path d="M45 90c-1.206 0-2.412-.311-3.488-.931L8.58 70.054c-2.152-1.241-3.488-3.556-3.488-6.04V25.987c0-2.485 1.337-4.8 3.489-6.041L41.512.932c2.152-1.242 4.824-1.243 6.977 0L81.42 19.945c2.151 1.241 3.488 3.556 3.488 6.041v38.027c0 2.485-1.337 4.8-3.489 6.041L48.488 89.068C47.412 89.689 46.206 90 45 90zM45 5.998c-.168 0-.336.043-.487.13L11.58 25.142c-.301.174-.488.498-.488.845v38.027c0 .347.187.671.487.844l32.933 19.015c.3.172.674.174.975 0L78.42 64.859c.301-.174.487-.497.487-.845V25.987c0-.348-.187-.671-.486-.844L45.487 6.128C45.337 6.041 45.168 5.998 45 5.998z" />
+                                    <path d="M32.122 58.462c-1.019 0-1.992-.521-2.549-1.418l-7.438-11.983v10.401c0 1.657-1.343 3-3 3-1.657 0-3-1.343-3-3V34.538c0-1.34.889-2.518 2.177-2.885 1.292-.365 2.666.165 3.372 1.303l7.438 11.983V34.538c0-1.657 1.343-3 3-3 1.657 0 3 1.343 3 3v20.924c0 1.34-.889 2.518-2.177 2.885-.375.103-.652.14-.925.14z" />
+                                    <path d="M42.236 58.462c-1.657 0-3-1.343-3-3V34.538c0-1.657 1.343-3 3-3h8.321c1.657 0 3 1.343 3 3s-1.343 3-3 3h-5.321v17.924c0 1.657-1.343 3-3 3z" />
+                                    <path d="M50.557 48h-8.321c-1.657 0-3-1.343-3-3 0-1.657 1.343-3 3-3h8.321c1.657 0 3 1.343 3 3 0 1.657-1.343 3-3 3z" />
+                                    <path d="M70.865 37.538H58.974c-1.657 0-3-1.343-3-3s1.343-3 3-3h11.891c1.657 0 3 1.343 3 3s-1.343 3-3 3z" />
+                                    <path d="M64.919 58.462c-1.657 0-3-1.343-3-3V34.538c0-1.657 1.343-3 3-3 1.657 0 3 1.343 3 3v20.924c0 1.657-1.343 3-3 3z" />
+                                </g>
+                            </svg>
+
+                        </div>
+                        <span className="hidden md:block">
+                            <Image src={'/logos/mintlab.svg'} alt="ML" height={150} width={100} />
+                        </span>
+                    </Link>
                     <nav className="hidden md:flex items-center gap-10 text-[14px] font-medium text-foreground/70">
                         <Link href="/recent" className="hover:text-foreground">
                             Recent
