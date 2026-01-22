@@ -25,7 +25,7 @@ export default function Hero() {
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-3">
-                            <Button variant="default">Explore Now</Button>
+                            <Button variant="default" className="hover:bg-transparent hover:text-black ring-1 ring-foreground">Explore Now</Button>
                             <Button variant="outline" className="ring-1 ring-black">Create NFT</Button>
                         </div>
 
