@@ -5,8 +5,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Menu, ShoppingBag, ShoppingCart } from "lucide-react";
+
+import { Menu, ShoppingCart } from "lucide-react";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 
