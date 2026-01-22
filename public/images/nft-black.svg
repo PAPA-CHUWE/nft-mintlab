@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 256 256"
+     width="256"
+     height="256"
+     role="img"
+     aria-label="NFT icon black">
+  <title>NFT Icon</title>
+
+  <!-- Hexagon outline -->
+  <polygon
+    points="128,16 224,72 224,184 128,240 32,184 32,72"
+    fill="none"
+    stroke="#000000"
+    stroke-width="12"
+    stroke-linejoin="round"
+  />
+
+  <!-- Inner hexagon -->
+  <polygon
+    points="128,36 206,82 206,174 128,220 50,174 50,82"
+    fill="none"
+    stroke="#000000"
+    stroke-width="6"
+    stroke-linejoin="round"
+    opacity="0.9"
+  />
+
+  <!-- NFT text -->
+  <text
+    x="128"
+    y="150"
+    text-anchor="middle"
+    font-size="72"
+    font-weight="600"
+    font-family="Arial, Helvetica, sans-serif"
+    fill="#000000"
+    letter-spacing="6"
+  >
+    NFT
+  </text>
+</svg>
