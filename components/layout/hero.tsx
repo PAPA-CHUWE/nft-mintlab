@@ -6,13 +6,13 @@ import { Button } from "../ui/button";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-background px-6 py-12 sm:py-20">
-            <div className="mx-auto max-w-7xl">
+        <section className="relative overflow-hidden bg-background px-6 py-12 sm:py-20 ">
+            <div className="mx-auto max-w-6xl">
                 <div className="relative z-10 grid gap-8 md:grid-cols-2 md:items-center">
                     {/* LEFT: copy */}
                     <div className="order-2 mt-6 md:order-1 md:mt-0">
                         <h5 className="max-w-xl text-4xl font-semibold leading-snug text-foreground sm:text-5xl">
-                            Create and sell{" "}
+                            Create and sell{" "}<br/>
                             <span className="bg-clip-text text-foreground/95 font-extrabold">
                                 NFT
                             </span>{" "}
