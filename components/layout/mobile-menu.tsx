@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 interface MobileMenuProps {
   open: boolean;
@@ -14,7 +15,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 md:hidden w-screen h-[calc(100vh-76px)]",
+        "fixed inset-0 z-50 md:hidden w-screen h-[calc(100vh-80px)]",
         open ? "pointer-events-auto" : "pointer-events-none"
       )}
     >
@@ -37,7 +38,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <span className="font-logo text-sm tracking-[0.22em]">
-            MINTLAB
+            <Image src={'/logos/mintlab.svg'} alt="ML" height={150} width={100}/>
           </span>
 
           <button

@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Menu, ShoppingBag, ShoppingCart } from "lucide-react";
 import MobileMenu from "./mobile-menu";
+import Image from "next/image";
 
 type NavRole = "creator" | "collector";
 
@@ -34,33 +35,18 @@ export default function NavBar() {
             >
                 {/* Left: logo icon only on mobile */}
                 <div className="flex items-center gap-10">
-                    <Link href="/" className="flex items-center gap-3">
-                        <div className="grid h-10 w-10 place-items-center">
-                            <svg
-                                width="34"
-                                height="18"
-                                viewBox="0 0 34 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-label="MintLab"
-                            >
-                                <path
-                                    d="M9 16C5.686 16 3 13.314 3 10C3 6.686 5.686 4 9 4C11.485 4 13.617 5.502 14.53 7.65C15.206 9.223 16.794 9.223 17.47 7.65C18.383 5.502 20.515 4 23 4C26.314 4 29 6.686 29 10C29 13.314 26.314 16 23 16C20.516 16 18.384 14.498 17.47 12.35C16.794 10.777 15.206 10.777 14.53 12.35C13.617 14.498 11.485 16 9 16Z"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </div>
-
-                        {/* Hide text on small screens */}
-                        <span className="hidden  font-logo text-sm tracking-[0.22em]">
-                            MINTLAB
-                        </span>
-                    </Link>
-
-                    {/* Hide left nav on small screens */}
+                <Link href="/" className="flex items-center">
+  <span className="relative block w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px]">
+    <Image
+      src="/logos/mintlab.svg"
+      alt="MintLab"
+      width={140}
+      height={40}
+      priority
+      className="h-auto w-full object-contain"
+    />
+  </span>
+</Link>
                     <nav className="hidden md:flex items-center gap-10 text-[14px] font-medium text-foreground/70">
                         <Link href="/recent" className="hover:text-foreground">
                             Recent
@@ -157,9 +143,9 @@ export default function NavBar() {
                     </Button>
 
                     <MobileMenu
-  open={menuOpen}
-  onClose={() => setMenuOpen(false)}
-/>
+                        open={menuOpen}
+                        onClose={() => setMenuOpen(false)}
+                    />
                 </div>
             </div>
         </header>
